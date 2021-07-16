@@ -1,0 +1,115 @@
+{{>headerlinks}}
+
+        <!-- ===== BOX ICONS ===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="css/cart.css">    
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    </head>
+
+    <body id="body-pd">
+        <header class="header" id="header">
+            <div class="header__toggle">
+                <i class='bx bx-menu' id="header-toggle"></i>
+            </div>
+        </header>
+
+        <div class="l-navbar" id="nav-bar">
+            <nav class="nav">
+                <div>
+                    <a href="#" class="nav__logo">
+                        <img src="images/logo.png" alt="" width="160px">
+                    </a>
+                    <div class="nav__list">
+                        <a href="#" class="nav__link active">
+                        <i class='bx bx-grid-alt nav__icon' ></i>
+                            <span class="nav__name">Dashboard</span>
+                        </a>
+
+                        <a href="/atender" class="nav__link">
+                            <i class='bx bx-receipt nav__icon' ></i>
+                            <span class="nav__name">Active Tender</span>
+                        </a>
+
+                        <a href="/ctender" class="nav__link">
+                            <i class='bx bx-bar-chart-alt-2 nav__icon' ></i>
+                            <span class="nav__name">Completed Tender</span>
+                        </a>
+                        
+                        <a href="/contact" class="nav__link">
+                            <i class='bx bx-message-square-detail nav__icon' ></i>
+                            <span class="nav__name">Contact</span>
+                        </a>
+
+                        <a href="/team" class="nav__link">
+                            <i class='bx bx-folder nav__icon' ></i>
+                            <span class="nav__name">Our Team</span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <a href="/" class="nav__link">
+                    <i class='bx bx-log-out nav__icon' ></i>
+                    <span class="nav__name">Go Back</span>
+                </a>
+            </nav>
+            </div>
+    <div id="popover" class="bg-light">
+    <form action="/createTender" method="POST">
+        <button type="button" id="close">&#10005;</button>
+        <br>
+        <h2>Create a 10der..</h2>
+
+        <h6 id="desc1">fill all the details properly</h6>
+
+        <div class="bg-light" style="margin-up:5px;">           
+        <div class="container bg-white shadow" id="step1">
+	    <div class="form-group ">
+            <label for="inputPassword4">Tender Title</label>
+            <input type="text" name="title" class="form-control" id="inputPassword4" placeholder="eg: Shirt stitching tender">
+        </div>
+  
+        <div class="form-group">
+            <label for="dexriptionn">Description</label>
+            <input type="text" name="description" class="form-control" id="descriptionn" placeholder="eg: This is for 5000 shirts of allen solly">
+        </div>
+	    <div class="form-row">
+	    <div class="form-group col-md-6">
+            <label for="inputState">Tender Category</label>
+            <select name="category" id="category" style="
+				padding: 6px;
+				margin:  0;
+				width: 100%;
+			">
+            <option>Choose a category</option>
+			<option name="Electronics" value="Electronics">Electronics</option>
+			<option name="Furniture"value="Furniture">Furniture</option>
+            <option name="Clothing" value="Clothing">Clothing</option>
+            <option name="Education" value="Education">Education</option>
+            </select>
+        </div>
+	    <div class="form-group col-md-6">
+            <label for="inputState">Bidding closes by:</label>
+            <input type="date" name="end_date" class="form-control" placeholder="0/0/2000">
+        </div>
+	    </div>
+        </div>
+
+        <button id="s1" type="submit" class="btn bbb btn-primary">Create</button>
+        </div>
+        </form>
+        </div>
+        <div id="create_div">
+            <button id="create" >&nbsp;&nbsp;&Dagger;&nbsp;New...&nbsp;&nbsp;</button>
+        </div>
+        
+    
+        
+        <script src="js/cart.js"></script>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+{{>headerlinks}}
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+</head>
+<body>
+
+
+<div class="container" id="container">
+	<div class="form-container sign-in-container">
+		<form action="/enter" method="post">
+			<h1>Login</h1>
+			
+			<input type="text" placeholder="UserName" name="login_name"/>
+
+		
+			<input type="password" placeholder="Password" name="login_password"/>
+	
+			<button name='login' value="login">Login</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-right">
+                <h1>Hey Provider!</h1>
+				<p>Get yourself registered<br>Contact admin for more Details</p>
+				<p>Contact no: 8668591400</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

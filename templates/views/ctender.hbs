@@ -1,0 +1,55 @@
+{{>headerlinks}}
+
+{{>afterheader}}
+
+                    <div class="nav__list">
+                        <a href="/cart" class="nav__link">
+                        <i class='bx bx-grid-alt nav__icon' ></i>
+                            <span class="nav__name">Dashboard</span>
+                        </a>
+
+                        <a href="/atender" class="nav__link">
+                            <i class='bx bx-receipt nav__icon' ></i>
+                            <span class="nav__name">Active Tender</span>
+                        </a>
+
+                        <a href="#" class="nav__link active">
+                            <i class='bx bx-bar-chart-alt-2 nav__icon' ></i>
+                            <span class="nav__name">Completed Tender</span>
+                        </a>
+                        
+                        <a href="/contact" class="nav__link">
+                            <i class='bx bx-message-square-detail nav__icon' ></i>
+                            <span class="nav__name">Contact</span>
+                        </a>
+
+                        <a href="/team" class="nav__link">
+                            <i class='bx bx-folder nav__icon' ></i>
+                            <span class="nav__name">Our Team</span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <a href="/" class="nav__link">
+                    <i class='bx bx-log-out nav__icon' ></i>
+                    <span class="nav__name">Go back</span>
+                </a>
+            </nav>
+        </div>
+
+        <h1>Your Completed Tenders Are as Following:</h1>
+        <hr>
+        {{#each Tender}}
+         <div class="tender_info">
+             <div class="tender_date">
+             <span>Created on: {{this.Start_date}}</span>
+             </div>
+             <div class="tender_title">{{this.Title}}</div>
+             <p class="tender_desc">{{this.Description}}</p>
+             <a href="#"><button class="bid_button">More Details</button></a>
+         </div>
+        {{/each}}  
+        <script src="js/cart.js"></script>
+    </body>
+</html>

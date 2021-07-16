@@ -1,0 +1,137 @@
+{{>headerlinks}}
+<style>
+    .form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=number] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=number]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+</style>
+
+{{>afterheader}}
+
+                    <div class="nav__list">
+                        <a href="/cart" class="nav__link">
+                        <i class='bx bx-grid-alt nav__icon' ></i>
+                            <span class="nav__name">Dashboard</span>
+                        </a>
+
+                        <a href="#" class="nav__link active">
+                            <i class='bx bx-receipt nav__icon' ></i>
+                            <span class="nav__name">Active Tender</span>
+                        </a>
+
+                        <a href="/ctender" class="nav__link">
+                            <i class='bx bx-bar-chart-alt-2 nav__icon' ></i>
+                            <span class="nav__name">Completed Tender</span>
+                        </a>
+                        
+                        <a href="/contact" class="nav__link">
+                            <i class='bx bx-message-square-detail nav__icon' ></i>
+                            <span class="nav__name">Contact</span>
+                        </a>
+
+                        <a href="/team" class="nav__link">
+                            <i class='bx bx-folder nav__icon' ></i>
+                            <span class="nav__name">Our Team</span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <a href="/" class="nav__link">
+                    <i class='bx bx-log-out nav__icon' ></i>
+                    <span class="nav__name">Go Back</span>
+                </a>
+            </nav>
+        </div>
+
+        <h1>Your Active Tenders Are Following:</h1>
+        <hr>
+        {{#each Tender}}
+         <div class="tender_info">
+             <div class="tender_date">
+             <span>Created on: {{this.Start_date}} <span style="color: blue;;margin-left:5rem">Id:{{this._id}}</span></span>
+             </div>
+             <div class="tender_title">{{this.Title}}</div>
+             <p class="tender_desc">{{this.Description}}</p>
+             <button class="bid_button" id="bid" onclick="openForm()">Bid Now</button>
+         </div>
+        {{/each}}
+
+    <div class="form-popup" id="myForm">
+    <form action="/create_bid" method="POST" class="form-container">
+    <h1>Bidding Details</h1>
+
+    <label for="desc"><b>Tender Id</b></label>
+    <input type="text" placeholder="Id of Tender Bidding for" name="tid" >
+
+    <label for=""><b>Amount</b></label>
+    <input type="number" placeholder="Enter Amount" name="bid_amount" required>
+
+    <label for="desc"><b>Description</b></label>
+    <input type="text" placeholder="Add a catchy headline" name="bid_desc" required>
+
+    <button type="submit" class="btn">Bid</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </form>
+    </div>
+
+    <script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>   
+        <script src="js/cart.js"></script>
+    </body>
+</html>

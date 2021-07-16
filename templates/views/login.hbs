@@ -1,0 +1,57 @@
+{{>headerlinks}}
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+</head>
+<body>
+
+
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form name="signin" action="/login" method="post" onsubmit = "event.preventDefault(); validateMyForm();">
+			<h1>Create Account</h1>
+
+			<input type="text" placeholder="UserName" name="sign_name" />
+			<input type="text" placeholder="Email" name="sign_email"/>
+			<input type="text" placeholder="Mobile no" name="sign_mobileno" />
+			<input type="password" placeholder="Password" name="sign_password" />
+			<input type="password" placeholder="Confirm Password" name="sign_cpassword" />
+			<p id="alert" style="color: red;text-align:center;font-size:0.7rem"></p>			
+			<button name="sign_up">Sign Up</button>
+
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="/enter" method="post">
+			<h1>Sign in</h1>
+			
+			<input type="text" placeholder="UserName" name="login_name"/>
+
+		
+			<input type="password" placeholder="Password" name="login_password"/>
+			<a href="/reset" style="font-size:smaller">Forgot Password?<span style="color:red;">Reset Here</span></a>
+	
+			<button name='login' value="login">Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript" src="js/login.js"></script>
+
+</body>
+</html>

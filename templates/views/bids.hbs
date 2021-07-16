@@ -1,0 +1,18 @@
+{{>headerlinks}}
+
+</head>
+<body>
+        <h1>Your Active Tenders Are Following:</h1>
+        <hr>
+       {{#each Bid}}
+        <div class="bid_info" style="  width: 60%; padding: 1.2rem; margin-left: 1rem; margin-top: 1rem; background-color:#F7F6FB; box-shadow: 0 1.4rem 8rem rgba(0,0,0,0.2);">
+            <span style="font-size: 1rem; font-weight: 700; margin-left: 0.5rem; margin-top: 0.3rem;">Bid placed on : {{this.bidding_date}}</span>
+            <p style="font-size:2rem; margin-left: 0.5rem; margin-top: 0.3rem; color:#4150ff;">Bid Placed by: {{this.Bidder_name}}</p>
+            <h1>Bidding Amount: {{this.Amount}} </h1>
+            <p style=" font-size: 0.9rem; margin-top: 0.4rem; margin-left:0.5rem; margin-bottom: 0.5rem;"> Message : {{this.Description}} </p>
+            <a href="bidding_info/?tender_id={{this._id}}"><button class="bid_button" style="border-radius: 20px; padding: 0.4rem; margin-left: 0.3rem; background-color: #4150ff; color: white; }" >Accept Bid</button></a>
+        </div>
+        {{/each}}
+        
+    </body>
+</html>

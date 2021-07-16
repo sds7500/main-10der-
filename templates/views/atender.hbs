@@ -1,0 +1,93 @@
+{{>headerlinks}}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+    #livesearch{
+       background-color: gainsboro; border-color:black;border-width:thin;border-style:solid;width:170px; 
+    }
+    .hide{
+        display: none;
+    }
+    a:link,a:visited,a:hover,a:active{
+        color: black;
+    }
+</style>
+{{>afterheader}}
+
+                    <div class="nav__list">
+                        <a href="/cart" class="nav__link">
+                        <i class='bx bx-grid-alt nav__icon' ></i>
+                            <span class="nav__name">Dashboard</span>
+                        </a>
+
+                        <a href="#" class="nav__link active">
+                            <i class='bx bx-receipt nav__icon' ></i>
+                            <span class="nav__name">Active Tender</span>
+                        </a>
+
+                        <a href="/ctender" class="nav__link">
+                            <i class='bx bx-bar-chart-alt-2 nav__icon' ></i>
+                            <span class="nav__name">Completed Tender</span>
+                        </a>
+                        
+                        <a href="/contact" class="nav__link">
+                            <i class='bx bx-message-square-detail nav__icon' ></i>
+                            <span class="nav__name">Contact</span>
+                        </a>
+
+                        <a href="/team" class="nav__link">
+                            <i class='bx bx-folder nav__icon' ></i>
+                            <span class="nav__name">Our Team</span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <a href="/" class="nav__link">
+                    <i class='bx bx-log-out nav__icon' ></i>
+                    <span class="nav__name">Go Back</span>
+                </a>
+            </nav>
+        </div>
+
+        <h3>Search Tender</h3>
+        <form>
+            <input type="text" size="30" onkeyup="showResults(this.value)">
+            <div id="livesearch" class="hide">this</div>
+        </form>
+        <h1>Your Active Tenders Are Following:</h1>
+        <hr>
+        {{#each Tender}}
+         <div class="tender_info">
+             <div class="tender_date">
+             <span>Created on: {{this.Start_date}}</span>
+             </div>
+             <div class="tender_title">{{this.Title}}</div>
+             <p class="tender_desc">{{this.Description}}</p>
+             <a href="bidding_info/?tender_id={{this._id}}"><button class="bid_button">More Details</button></a>
+         </div>
+        {{/each}}
+        
+        <script>
+        let search = $("#livesearch");
+        function showResults(str){
+            if(str.length==0){
+                search.addClass("hide");
+            }
+            else{
+                search.removeClass("hide");
+            }
+            $.ajax({
+            url:"/atender",
+            contentType:"application/json",
+            method:"POST",
+            data:JSON.stringify({query: str}),
+            success:function(result){
+                search.html(result.response);
+            }
+
+        })
+        }
+        </script>
+        <script src="js/cart.js"></script>
+    </body>
+</html>

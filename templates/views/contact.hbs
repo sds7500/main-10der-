@@ -1,0 +1,196 @@
+{{>headerlinks}}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+.wrapper {
+  width: 320px;
+  height: 540px;
+  background: #fdfeff;
+  transition: background 0.6s ease;
+  border-radius: 10px;
+  padding: 20px 20px 20px 20px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper .profile {
+  margin-top: 2.2em;
+  position: relative;
+}
+.wrapper .profile:after {
+  width: 100%;
+  height: 1px;
+  content: " ";
+  display: block;
+  margin-top: 1.3em;
+  background: #e9eff6;
+}
+
+.wrapper .profile .thumbnail {
+  width: 124px;
+  height: 124px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5em;
+  border-radius: 100%;
+  box-shadow: 0 13px 26px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+.wrapper .profile .name {
+  color: #2d354a;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+}
+.wrapper .profile .title {
+  color: #7c8097;
+  font-size: 0.75em;
+  font-weight: 300;
+  text-align: center;
+  padding-top: 0.5em;
+  padding-bottom: 0.7em;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.wrapper .profile .description {
+  color: #080911;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 1.3em;
+}
+.wrapper .profile .btn {
+  color: #fff;
+  width: 130px;
+  height: 42px;
+  outline: none;
+  border: none;
+  display: block;
+  cursor: pointer;
+  font-weight: 300;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 70px;
+  box-shadow: 0 13px 26px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.16);
+  background: linear-gradient(to bottom right, #c90a6d, #ff48a0);
+}
+.wrapper .social-icons {
+  display: flex;
+  margin-top: 1.2em;
+  justify-content: space-around;
+}
+.wrapper .social-icons .icon {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.wrapper .social-icons .icon a {
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  font-size: 28px;
+  line-height: 60px;
+  text-align: center;
+  border-radius: 30px;
+  box-shadow: 0 13px 26px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+.wrapper .social-icons .icon:nth-of-type(1) a {
+  background: linear-gradient(to bottom right, #c90a6d, #ff48a0);
+}
+.wrapper .social-icons .icon:nth-of-type(2) a {
+  background: linear-gradient(to bottom right, #5e5aec, #3f9efc);
+}
+.wrapper .social-icons .icon:nth-of-type(3) a {
+  background: linear-gradient(to bottom right, #6452e9, #639ff9);
+}
+.wrapper .social-icons .icon h4 {
+  color: #080911;
+  font-size: 1em;
+  margin-top: 1.3em;
+  margin-bottom: 0.2em;
+}
+.wrapper .social-icons .icon p {
+  color: #666b7d;
+  font-size: 12px;
+}
+
+.concept {
+  position: absolute;
+  bottom: 25px;
+  color: #aab0c4;
+  font-size: 0.9em;
+  font-weight: 400;
+}
+.concept a {
+  color: #ac1966;
+  text-decoration: none;
+}
+</style>
+{{>afterheader}}
+
+                    <div class="nav__list">
+                        <a href="/cart" class="nav__link">
+                        <i class='bx bx-grid-alt nav__icon' ></i>
+                            <span class="nav__name">Dashboard</span>
+                        </a>
+
+                        <a href="/atender" class="nav__link">
+                            <i class='bx bx-receipt nav__icon' ></i>
+                            <span class="nav__name">Active Tender</span>
+                        </a>
+
+                        <a href="/ctender" class="nav__link ">
+                            <i class='bx bx-bar-chart-alt-2 nav__icon' ></i>
+                            <span class="nav__name">Completed Tender</span>
+                        </a>
+                        
+                        <a href="#" class="nav__link active">
+                            <i class='bx bx-message-square-detail nav__icon' ></i>
+                            <span class="nav__name">Contact</span>
+                        </a>
+
+                        <a href="/team" class="nav__link">
+                            <i class='bx bx-folder nav__icon' ></i>
+                            <span class="nav__name">Our Team</span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <a href="/" class="nav__link">
+                    <i class='bx bx-log-out nav__icon' ></i>
+                    <span class="nav__name">Go Back</span>
+                </a>
+            </nav>
+        </div>
+
+
+<div class="wrapper" style="margin-left: 200px;">
+	
+	<div class="profile">
+		<img src="https://cdn1.iconfinder.com/data/icons/business-users/512/circle-512.png" class="thumbnail">
+		<h3 class="name">{{username}}</h3>
+		<p class="title">{{number}}</p>
+		<p class="description">{{email}}</p>
+		<a href="/forgot"><button type="button" class="btn">Reset Password</button></a>
+	</div>
+	
+	<div class="social-icons">
+		<div class="icon">
+			<a href="#"><i class='bx bx-receipt nav__icon' ></i></a>
+			<h4>{{active}} Active</h4>
+			<p>Tenders</p>
+		</div>
+		
+		<div class="icon">
+			<a href="#"><i class='bx bx-bar-chart-alt-2 nav__icon' ></i></a>
+			<h4>{{completed}} Completed</h4>
+			<p>Tenders</p>
+		</div>
+		
+	</div>
+</div>
+
+        
+        <script src="js/cart.js"></script>
+    </body>
+</html>
